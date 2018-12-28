@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+   <body>
+      <h3>DOB form</h3>
+      <hr/>
+      
+      {%- for category, message in get_flashed_messages(with_categories = true) %}
+         <div class = "alert alert-danger">
+            {{ message }}
+         </div>
+      {%- endfor %}
+      
+      <form action = "{{ request.path }}" method = "post">
+         <label for = "dob">Date of Birth</label><br>
+         <input type="date" name="dob" id="Birthday"><br>
+         <input type = "submit" value = "Submit" />
+      </form>
+   </body>
+</html>
