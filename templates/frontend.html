@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head></head>
+   <body>
+      <h3>
+         <a href = "{{ url_for('show_all') }}">AGE Calculator</a>
+      </h3>
+      
+      <hr/>
+      {%- for message in get_flashed_messages() %}
+         {{ message }}
+      {%- endfor %}
+		
+      <h3>To find age (<a href = "{{ url_for('new') }}">click here
+         </a>)</h3>
+      
+      <table>
+         <thead>
+            <tr>
+               <th>DOB</th>
+               <th>AGE</th>
+            </tr>
+         </thead>
+
+         <tbody>
+            {% for dobd in dob %}
+               <tr>
+                  <td>{{ dobd.dob }}</td>
+                  <td>{{ dobd.age }}</td>
+
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+   </body>
+</html>
